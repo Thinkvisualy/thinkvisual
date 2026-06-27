@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Think Visual | Digital Marketing Agency – Nashik</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --bg: #0B0C0F;
+    --bg2: #131519;
+    --bg3: #1A1C22;
+    --accent: #F5A623;
+    --accent2: #FF6B35;
+    --text: #F0F0F0;
+    --muted: #888;
+    --border: rgba(255,255,255,0.08);
+    --font: 'Space Grotesk', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 7%;
+    background: rgba(11,12,15,0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-size: 22px; font-weight: 700; letter-spacing: -0.5px;
+    color: var(--text);
+  }
+  .logo span { color: var(--accent); }
+
+  nav { display: flex; gap: 30px; align-items: center; }
+  nav a {
+    text-decoration: none; color: var(--muted);
+    font-size: 14px; font-weight: 500;
+    transition: color .2s;
+  }
+  nav a:hover { color: var(--text); }
+
+  .nav-cta {
+    background: var(--accent); color: #000 !important;
+    padding: 9px 20px; border-radius: 30px; font-weight: 600;
+    transition: opacity .2s !important;
+  }
+  .nav-cta:hover { opacity: .85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    padding: 0 7%;
+    position: relative; overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 70% at 80% 40%, rgba(245,166,35,.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--bg3); border: 1px solid var(--border);
+    padding: 6px 16px; border-radius: 30px;
+    font-size: 13px; color: var(--accent); font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .hero-badge::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent); display: inline-block;
+    animation: blink 1.4s ease-in-out infinite;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 76px);
+    font-weight: 700; line-height: 1.1;
+    letter-spacing: -2px;
+    max-width: 780px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 .highlight {
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  #typewriter {
+    display: inline-block;
+    min-width: 280px;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 3px; height: 0.85em;
+    background: var(--accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: cursor-blink 0.7s step-end infinite;
+  }
+  @keyframes cursor-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  .hero p {
+    font-size: 17px; color: var(--muted); line-height: 1.75;
+    max-width: 500px; margin-bottom: 40px;
+  }
+
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: #000;
+    padding: 14px 28px; border-radius: 40px;
+    font-weight: 700; font-size: 15px;
+    text-decoration: none; transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 0 0 0 rgba(245,166,35,0.4);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(245,166,35,.35);
+  }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border); color: var(--text);
+    padding: 14px 28px; border-radius: 40px;
+    font-weight: 500; font-size: 15px;
+    text-decoration: none; transition: border-color .2s, background .2s;
+  }
+  .btn-secondary:hover { border-color: var(--accent); background: rgba(245,166,35,.06); }
+
+  /* ── STATS ── */
+  .stats {
+    display: flex; flex-wrap: wrap; gap: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 0 7%;
+  }
+
+  .stat {
+    flex: 1; min-width: 160px;
+    padding: 36px 30px;
+    border-right: 1px solid var(--border);
+  }
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-size: 38px; font-weight: 700; letter-spacing: -1px;
+    color: var(--accent); line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label { font-size: 13px; color: var(--muted); }
+
+  /* ── SERVICES ── */
+  .services { padding: 90px 7%; }
+
+  .section-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700; letter-spacing: -1px;
+    margin-bottom: 55px; line-height: 1.15;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .service-card {
+    background: var(--bg2);
+    padding: 36px 32px;
+    transition: background .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card:hover { background: var(--bg3); }
+
+  .service-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transition: width .35s ease;
+  }
+  .service-card:hover::after { width: 100%; }
+
+  .service-icon {
+    font-size: 28px; margin-bottom: 18px; display: block;
+  }
+
+  .service-card h3 {
+    font-size: 18px; font-weight: 600; margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .service-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 90px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img {
+    width: 100%; border-radius: 16px;
+    filter: grayscale(20%) contrast(1.05);
+    display: block;
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -18px; right: -18px;
+    background: var(--accent);
+    color: #000;
+    padding: 18px 22px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .about-badge strong { font-size: 28px; display: block; letter-spacing: -1px; }
+
+  .about-text { padding-right: 20px; }
+
+  .about-text p {
+    font-size: 16px; color: var(--muted);
+    line-height: 1.8; margin-bottom: 28px;
+  }
+
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .check-list li {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 15px; color: var(--text); font-weight: 500;
+  }
+  .check-list li::before {
+    content: '✓';
+    background: rgba(245,166,35,.15);
+    color: var(--accent);
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0;
+  }
+
+  /* ── PROCESS ── */
+  .process {
+    padding: 90px 7%;
+    background: var(--bg2);
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 0;
+  }
+
+  .step {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--bg);
+    position: relative;
+  }
+
+  .step-num {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    color: var(--accent); margin-bottom: 16px; display: block;
+  }
+
+  .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+  .step p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 90px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700; letter-spacing: -1px;
+    line-height: 1.15; margin-bottom: 24px;
+  }
+
+  .contact-info p {
+    font-size: 16px; color: var(--muted); line-height: 1.75;
+    margin-bottom: 36px;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 16px; }
+
+  .contact-link {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 15px; color: var(--text);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .contact-link:hover { color: var(--accent); }
+
+  .contact-link-icon {
+    width: 44px; height: 44px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+
+  .contact-cta {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px 40px;
+    display: flex; flex-direction: column; gap: 24px;
+  }
+
+  .contact-cta h3 {
+    font-size: 22px; font-weight: 700;
+  }
+
+  .contact-cta p { font-size: 15px; color: var(--muted); line-height: 1.7; }
+
+  .whatsapp-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: #25D366;
+    color: #fff;
+    padding: 16px 28px; border-radius: 40px;
+    font-weight: 700; font-size: 16px;
+    text-decoration: none; transition: opacity .2s;
+    width: 100%;
+  }
+  .whatsapp-btn:hover { opacity: .88; }
+
+  .call-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 14px 28px; border-radius: 40px;
+    font-weight: 500; font-size: 15px;
+    text-decoration: none; transition: border-color .2s;
+    width: 100%;
+  }
+  .call-btn:hover { border-color: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 7%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+
+  .footer-logo { font-size: 18px; font-weight: 700; }
+  .footer-logo span { color: var(--accent); }
+
+  footer p { font-size: 13px; color: var(--muted); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { display: none; }
+    .hero { padding-top: 60px; padding-bottom: 60px; min-height: auto; }
+    .stats { margin: 0; }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat:last-child { border-bottom: none; }
+    .about, .contact { grid-template-columns: 1fr; gap: 40px; }
+    .about-text { padding-right: 0; }
+    .about-badge { right: 10px; bottom: 10px; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Think<span>Visual</span></div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#process">Process</a>
+    <a href="#contact" class="nav-cta">Get Started →</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Digital Marketing Agency · Nashik, Maharashtra</div>
+
+  <h1>
+    We build brands<br>
+    through <span class="highlight"><span id="typewriter"></span><span class="cursor"></span></span>
+  </h1>
+
+  <p>Think Visual helps businesses grow online with high-converting websites, SEO, social media, and creative design — all under one roof.</p>
+
+  <div class="hero-btns">
+    <a href="https://wa.me/91XXXXXXXXXX" class="btn-primary">💬 Chat on WhatsApp</a>
+    <a href="#services" class="btn-secondary">See Our Services →</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">150+</div>
+    <div class="stat-label">Clients Served</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">5★</div>
+    <div class="stat-label">Average Rating</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">3×</div>
+    <div class="stat-label">Avg. Traffic Growth</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">48h</div>
+    <div class="stat-label">First Delivery</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-eyebrow">What We Do</div>
+  <h2 class="section-title">Every service your brand needs</h2>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="service-icon">🌐</span>
+      <h3>Website Development</h3>
+      <p>Fast, mobile-first websites built to convert visitors into customers — from landing pages to full business portals.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🔍</span>
+      <h3>SEO & Local SEO</h3>
+      <p>Rank higher on Google and get discovered by local customers searching for your services in Nashik and beyond.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🎨</span>
+      <h3>Graphic Design</h3>
+      <p>Logos, social media creatives, flyers, and brand kits designed to make your business look premium and memorable.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🎬</span>
+      <h3>Video Editing</h3>
+      <p>Attention-grabbing reels, ads, and promotional videos edited professionally to boost your engagement.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">📱</span>
+      <h3>Social Media Marketing</h3>
+      <p>Content strategy, posting schedules, and ad campaigns that grow your following and generate real leads.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">📈</span>
+      <h3>Full Digital Strategy</h3>
+      <p>A complete growth roadmap tailored to your business goals — combining all channels for maximum ROI.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <img class="about-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80" alt="Think Visual Team">
+    <div class="about-badge">
+      <strong>4+</strong>Years of<br>Experience
+    </div>
+  </div>
+
+  <div class="about-text">
+    <div class="section-eyebrow">About Us</div>
+    <h2 class="section-title">We are Think Visual</h2>
+    <p>A creative digital agency based in Nashik, Maharashtra. We partner with businesses — from local startups to growing brands — to build powerful online presences that drive real results.</p>
+
+    <ul class="check-list">
+      <li>Tailored strategy for every client</li>
+      <li>Transparent reporting & communication</li>
+      <li>Results-focused, not just activity-focused</li>
+      <li>One team handling everything end-to-end</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-eyebrow">How It Works</div>
+  <h2 class="section-title" style="margin-bottom:40px;">Simple. Fast. Effective.</h2>
+
+  <div class="process-steps">
+
+    <div class="step">
+      <span class="step-num">STEP 01</span>
+      <h3>Free Consultation</h3>
+      <p>Tell us about your business and goals. We listen first, then plan.</p>
+    </div>
+
+    <div class="step">
+      <span class="step-num">STEP 02</span>
+      <h3>Custom Strategy</h3>
+      <p>We build a tailored marketing plan aligned with your budget and timeline.</p>
+    </div>
+
+    <div class="step">
+      <span class="step-num">STEP 03</span>
+      <h3>Execution</h3>
+      <p>Our team gets to work — delivering quality creatives, websites, and campaigns.</p>
+    </div>
+
+    <div class="step">
+      <span class="step-num">STEP 04</span>
+      <h3>Grow & Scale</h3>
+      <p>Track results, optimise, and scale what works for continuous growth.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div class="section-eyebrow">Contact Us</div>
+    <h2>Let's grow your business together</h2>
+    <p>Ready to take your brand to the next level? Reach out and get a free consultation — no strings attached.</p>
+
+    <div class="contact-links">
+      <a href="tel:+91XXXXXXXXXX" class="contact-link">
+        <div class="contact-link-icon">📞</div>
+        +91 XXXXXXXXXX
+      </a>
+      <a href="mailto:your@email.com" class="contact-link">
+        <div class="contact-link-icon">📧</div>
+        your@email.com
+      </a>
+      <span class="contact-link">
+        <div class="contact-link-icon">📍</div>
+        Nashik, Maharashtra, India
+      </span>
+    </div>
+  </div>
+
+  <div class="contact-cta">
+    <h3>Start with a free call 👋</h3>
+    <p>Chat with us on WhatsApp or call directly. We typically respond within minutes during business hours.</p>
+    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-btn">
+      <svg width="22" height="22" viewBox="0 0 32 32" fill="white"><path d="M16 0C7.164 0 0 7.163 0 16c0 2.822.737 5.473 2.027 7.776L0 32l8.44-2.013A15.938 15.938 0 0016 32c8.836 0 16-7.163 16-16S24.836 0 16 0zm0 29.333a13.27 13.27 0 01-6.773-1.854l-.487-.289-5.013 1.195 1.217-4.878-.317-.502A13.246 13.246 0 012.667 16C2.667 8.637 8.636 2.667 16 2.667c7.363 0 13.333 5.97 13.333 13.333 0 7.364-5.97 13.333-13.333 13.333zm7.293-9.987c-.4-.2-2.365-1.167-2.732-1.3-.367-.133-.633-.2-.9.2-.267.4-1.033 1.3-1.267 1.567-.233.267-.467.3-.867.1-.4-.2-1.687-.622-3.214-1.982-1.188-1.059-1.99-2.368-2.222-2.768-.233-.4-.025-.616.175-.815.18-.18.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.333-.8-.667-.667-.9-.667h-.767c-.267 0-.7.1-1.067.5-.367.4-1.4 1.367-1.4 3.333s1.433 3.867 1.633 4.133c.2.267 2.82 4.3 6.827 6.033.954.412 1.699.658 2.279.842.957.305 1.829.262 2.518.159.768-.115 2.365-.967 2.699-1.9.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/></svg>
+      Message on WhatsApp
+    </a>
+    <a href="tel:+91XXXXXXXXXX" class="call-btn">📞 Call Us Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Think<span>Visual</span></div>
+  <p>© 2026 Think Visual · Digital Marketing Agency · Nashik, Maharashtra</p>
+  <p style="font-size:12px; color:#555;">All Rights Reserved</p>
+</footer>
+
+<script>
+  // Typewriter effect
+  const words = ['SEO', 'Web Design', 'Social Media', 'Video Editing', 'Graphic Design', 'Digital Growth'];
+  let wi = 0, ci = 0, deleting = false;
+  const el = document.getElementById('typewriter');
+
+  function type() {
+    const word = words[wi];
+    el.textContent = deleting ? word.slice(0, --ci) : word.slice(0, ++ci);
+
+    if (!deleting && ci === word.length) {
+      setTimeout(() => { deleting = true; type(); }, 1800);
+    } else if (deleting && ci === 0) {
+      deleting = false;
+      wi = (wi + 1) % words.length;
+      setTimeout(type, 300);
+    } else {
+      setTimeout(type, deleting ? 60 : 110);
+    }
+  }
+  type();
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .step, .stat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
