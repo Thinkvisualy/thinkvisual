@@ -30,6 +30,7 @@ nav a:hover{color:var(--text);}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#000;padding:14px 28px;border-radius:40px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .2s;}
 .btn-primary:hover{transform:translateY(-2px);}
 .btn-secondary{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--text);padding:14px 28px;border-radius:40px;font-weight:500;font-size:15px;text-decoration:none;}
+.btn-secondary:hover{border-color:var(--accent);}
 .stats{display:flex;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:0 7%;}
 .stat{flex:1;min-width:160px;padding:36px 30px;border-right:1px solid var(--border);}
 .stat:last-child{border-right:none;}
@@ -47,28 +48,31 @@ nav a:hover{color:var(--text);}
 .service-card h3{font-size:18px;font-weight:600;margin-bottom:10px;}
 .service-card p{font-size:14px;color:var(--muted);line-height:1.65;}
 .portfolio{padding:90px 7%;background:var(--bg2);}
-.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
 .portfolio-item{border-radius:14px;overflow:hidden;position:relative;background:var(--bg3);aspect-ratio:4/3;}
 .portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
 .portfolio-item:hover img{transform:scale(1.05);}
-.portfolio-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:15px;}
+.portfolio-overlay{position:absolute;inset:0;background:rgba(0,0,0,.55);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:15px;}
 .portfolio-item:hover .portfolio-overlay{opacity:1;}
-.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:40px;}
-.video-wrap{border-radius:14px;overflow:hidden;aspect-ratio:16/9;}
+.video-section{padding:70px 7%;background:var(--bg);}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:10px;}
+.video-wrap{border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:var(--bg3);}
 .video-wrap iframe{width:100%;height:100%;border:none;}
-.about{padding:90px 7%;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
-.about-visual{position:relative;}
-.about-img{width:100%;border-radius:16px;display:block;}
-.about-badge{position:absolute;bottom:-18px;right:-18px;background:var(--accent);color:#000;padding:18px 22px;border-radius:12px;font-weight:700;font-size:13px;line-height:1.5;text-align:center;}
-.about-badge strong{font-size:28px;display:block;}
-.about-text{padding-right:20px;}
-.about-text p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:28px;}
-.check-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
-.check-list li{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500;}
-.check-list li::before{content:'✓';background:rgba(245,166,35,.15);color:var(--accent);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;}
-.process{padding:90px 7%;}
+.insta-wrap{border-radius:14px;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;min-height:400px;}
+.founder{padding:90px 7%;display:grid;grid-template-columns:1fr 1.6fr;gap:70px;align-items:center;}
+.founder-visual{position:relative;}
+.founder-img{width:100%;border-radius:20px;display:block;object-fit:cover;max-height:500px;}
+.founder-badge{position:absolute;bottom:-18px;left:-18px;background:var(--accent);color:#000;padding:16px 20px;border-radius:12px;font-weight:700;font-size:13px;line-height:1.5;}
+.founder-badge strong{font-size:26px;display:block;letter-spacing:-1px;}
+.founder-text{}
+.founder-text h2{font-size:clamp(26px,4vw,42px);font-weight:700;letter-spacing:-1px;margin-bottom:8px;line-height:1.2;}
+.founder-role{color:var(--accent);font-size:15px;font-weight:600;margin-bottom:24px;display:block;}
+.founder-text p{font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:28px;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:10px;}
+.skill-tag{background:var(--bg3);border:1px solid var(--border);padding:8px 16px;border-radius:30px;font-size:13px;color:var(--text);font-weight:500;}
+.process{padding:90px 7%;background:var(--bg2);}
 .process-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:30px;}
-.step{padding:30px;border:1px solid var(--border);border-radius:14px;background:var(--bg2);}
+.step{padding:30px;border:1px solid var(--border);border-radius:14px;background:var(--bg);}
 .step-num{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);margin-bottom:16px;display:block;}
 .step h3{font-size:16px;font-weight:600;margin-bottom:10px;}
 .step p{font-size:13px;color:var(--muted);line-height:1.6;}
@@ -84,19 +88,29 @@ nav a:hover{color:var(--text);}
 .contact-cta p{font-size:15px;color:var(--muted);line-height:1.7;}
 .whatsapp-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;padding:16px 28px;border-radius:40px;font-weight:700;font-size:16px;text-decoration:none;width:100%;}
 .call-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:transparent;border:1px solid var(--border);color:var(--text);padding:14px 28px;border-radius:40px;font-weight:500;font-size:15px;text-decoration:none;width:100%;}
+.call-btn:hover{border-color:var(--accent);}
 footer{border-top:1px solid var(--border);padding:28px 7%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 footer p{font-size:13px;color:var(--muted);}
-@media(max-width:768px){nav{display:none;}.hero{padding-top:60px;padding-bottom:60px;min-height:auto;}.stats{margin:0;}.stat{border-right:none;border-bottom:1px solid var(--border);}.stat:last-child{border-bottom:none;}.about,.contact{grid-template-columns:1fr;gap:40px;}.about-text{padding-right:0;}.about-badge{right:10px;bottom:10px;}footer{flex-direction:column;text-align:center;}}
+@media(max-width:768px){
+nav{display:none;}
+.hero{padding-top:60px;padding-bottom:60px;min-height:auto;}
+.stats{margin:0;}
+.stat{border-right:none;border-bottom:1px solid var(--border);}
+.stat:last-child{border-bottom:none;}
+.founder,.contact{grid-template-columns:1fr;gap:40px;}
+.founder-badge{left:10px;bottom:10px;}
+footer{flex-direction:column;text-align:center;}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <img class="logo-img" src="logo.png" alt="Think Visual">
+  <img class="logo-img" src="logo1.png" alt="Think Visual">
   <nav>
     <a href="#services">Services</a>
     <a href="#portfolio">Portfolio</a>
-    <a href="#about">About</a>
+    <a href="#founder">About</a>
     <a href="#contact" class="nav-cta">Get Started →</a>
   </nav>
 </header>
@@ -104,7 +118,7 @@ footer p{font-size:13px;color:var(--muted);}
 <section class="hero">
   <div class="hero-badge">Digital Marketing Agency · Nashik, Maharashtra</div>
   <h1>We build brands<br>through <span class="highlight"><span id="typewriter"></span><span class="cursor"></span></span></h1>
-  <p>Think Visual helps businesses grow online with websites, SEO, social media, and creative design — all under one roof.</p>
+  <p>Think Visual helps businesses grow online with high-converting websites, SEO, social media, creative design & AI-powered marketing — all under one roof.</p>
   <div class="hero-btns">
     <a href="https://wa.me/918087861953" class="btn-primary">💬 Chat on WhatsApp</a>
     <a href="#portfolio" class="btn-secondary">See Our Work →</a>
@@ -127,44 +141,57 @@ footer p{font-size:13px;color:var(--muted);}
     <div class="service-card"><span class="service-icon">🎨</span><h3>Graphic Design</h3><p>Logos, social media creatives, flyers, and brand kits designed to impress.</p></div>
     <div class="service-card"><span class="service-icon">🎬</span><h3>Video Editing</h3><p>Reels, ads, and promotional videos edited professionally.</p></div>
     <div class="service-card"><span class="service-icon">📱</span><h3>Social Media Marketing</h3><p>Content strategy and ad campaigns that grow your following and leads.</p></div>
-    <div class="service-card"><span class="service-icon">📈</span><h3>Full Digital Strategy</h3><p>A complete growth roadmap tailored to your business goals.</p></div>
+    <div class="service-card"><span class="service-icon">🤖</span><h3>AI-Powered Marketing</h3><p>Smart automation and AI tools to supercharge your marketing results.</p></div>
   </div>
 </section>
 
 <section class="portfolio" id="portfolio">
   <div class="section-eyebrow">Our Work</div>
-  <h2 class="section-title">Designs & Videos</h2>
+  <h2 class="section-title">Design Portfolio</h2>
   <div class="portfolio-grid">
-    <div class="portfolio-item"><img src="design1.jpg" alt="Design 1"><div class="portfolio-overlay">Graphic Design</div></div>
-    <div class="portfolio-item"><img src="design2.jpg" alt="Design 2"><div class="portfolio-overlay">Social Media Post</div></div>
-    <div class="portfolio-item"><img src="design3.jpg" alt="Design 3"><div class="portfolio-overlay">Brand Identity</div></div>
-    <div class="portfolio-item"><img src="design4.jpg" alt="Design 4"><div class="portfolio-overlay">Poster Design</div></div>
-    <div class="portfolio-item"><img src="design5.jpg" alt="Design 5"><div class="portfolio-overlay">Logo Design</div></div>
-    <div class="portfolio-item"><img src="design6.jpg" alt="Design 6"><div class="portfolio-overlay">Flyer Design</div></div>
-  </div>
-  <div class="section-eyebrow" style="margin-top:60px;">Video Work</div>
-  <div class="video-grid">
-    <div class="video-wrap"><iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe></div>
-    <div class="video-wrap"><iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe></div>
-    <div class="video-wrap"><iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe></div>
+    <div class="portfolio-item"><img src="design1.jpg.png" alt="Design 1"><div class="portfolio-overlay">Graphic Design</div></div>
+    <div class="portfolio-item"><img src="design2.jpg.png" alt="Design 2"><div class="portfolio-overlay">Social Media Post</div></div>
+    <div class="portfolio-item"><img src="design3.jpg.png" alt="Design 3"><div class="portfolio-overlay">Brand Identity</div></div>
+    <div class="portfolio-item"><img src="design4.jpg.png" alt="Design 4"><div class="portfolio-overlay">Poster Design</div></div>
+    <div class="portfolio-item"><img src="Design5.jpg.png" alt="Design 5"><div class="portfolio-overlay">Creative Design</div></div>
   </div>
 </section>
 
-<section class="about" id="about">
-  <div class="about-visual">
-    <img class="about-img" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&q=80" alt="Think Visual Team">
-    <div class="about-badge"><strong>6+</strong>Years of<br>Experience</div>
+<section class="video-section" id="videos">
+  <div class="section-eyebrow">Video Work</div>
+  <h2 class="section-title">Our Videos</h2>
+  <div class="video-grid">
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/b7281YyXKck" allowfullscreen></iframe>
+    </div>
+    <div class="insta-wrap">
+      <blockquote class="instagram-media"
+        data-instgrm-permalink="https://www.instagram.com/reel/DXG_wA3iGT3/"
+        data-instgrm-version="14"
+        style="background:#1A1C22;border:1px solid rgba(255,255,255,0.08);border-radius:14px;margin:0;max-width:100%;width:100%;">
+      </blockquote>
+    </div>
   </div>
-  <div class="about-text">
-    <div class="section-eyebrow">About Us</div>
-    <h2 class="section-title">We are Think Visual</h2>
-    <p>A creative digital agency based in Nashik, Maharashtra. We help businesses build powerful online presences that drive real results.</p>
-    <ul class="check-list">
-      <li>Tailored strategy for every client</li>
-      <li>Transparent reporting & communication</li>
-      <li>Results-focused, not just activity-focused</li>
-      <li>One team handling everything end-to-end</li>
-    </ul>
+</section>
+
+<section class="founder" id="founder">
+  <div class="founder-visual">
+    <img class="founder-img" src="me.jpg.png" alt="Harshad Jejurkar">
+    <div class="founder-badge"><strong>6+</strong>Years of<br>Experience</div>
+  </div>
+  <div class="founder-text">
+    <div class="section-eyebrow">Meet The Founder</div>
+    <h2>Harshad Jejurkar</h2>
+    <span class="founder-role">Founder & Creative Director</span>
+    <p>I'm a Digital Marketer, Graphic Designer, and Video Editor with over 6 years of experience. I help businesses grow through creative branding, high-converting websites, digital marketing, professional video editing, and AI-powered marketing solutions.</p>
+    <div class="skill-tags">
+      <span class="skill-tag">🎨 Graphic Design</span>
+      <span class="skill-tag">📈 Digital Marketing</span>
+      <span class="skill-tag">🎬 Video Editing</span>
+      <span class="skill-tag">🌐 Web Development</span>
+      <span class="skill-tag">🤖 AI Marketing</span>
+      <span class="skill-tag">📱 Social Media</span>
+    </div>
   </div>
 </section>
 
@@ -172,10 +199,10 @@ footer p{font-size:13px;color:var(--muted);}
   <div class="section-eyebrow">How It Works</div>
   <h2 class="section-title" style="margin-bottom:40px;">Simple. Fast. Effective.</h2>
   <div class="process-steps">
-    <div class="step"><span class="step-num">STEP 01</span><h3>Free Consultation</h3><p>Tell us about your business and goals.</p></div>
-    <div class="step"><span class="step-num">STEP 02</span><h3>Custom Strategy</h3><p>Tailored marketing plan for your budget.</p></div>
-    <div class="step"><span class="step-num">STEP 03</span><h3>Execution</h3><p>Quality creatives, websites, and campaigns.</p></div>
-    <div class="step"><span class="step-num">STEP 04</span><h3>Grow & Scale</h3><p>Track results and scale what works.</p></div>
+    <div class="step"><span class="step-num">STEP 01</span><h3>Free Consultation</h3><p>Tell us about your business and goals. We listen first, then plan.</p></div>
+    <div class="step"><span class="step-num">STEP 02</span><h3>Custom Strategy</h3><p>Tailored marketing plan aligned with your budget and timeline.</p></div>
+    <div class="step"><span class="step-num">STEP 03</span><h3>Execution</h3><p>Quality creatives, websites, and campaigns delivered fast.</p></div>
+    <div class="step"><span class="step-num">STEP 04</span><h3>Grow & Scale</h3><p>Track results, optimise, and scale what works.</p></div>
   </div>
 </section>
 
@@ -188,23 +215,26 @@ footer p{font-size:13px;color:var(--muted);}
       <a href="tel:+918087861953" class="contact-link"><div class="contact-link-icon">📞</div>+91 8087861953</a>
       <a href="mailto:Harshadjejurkar91@gmail.com" class="contact-link"><div class="contact-link-icon">📧</div>Harshadjejurkar91@gmail.com</a>
       <span class="contact-link"><div class="contact-link-icon">📍</div>Nashik, Maharashtra, India</span>
+      <a href="https://www.instagram.com/reel/DXG_wA3iGT3/" class="contact-link" target="_blank"><div class="contact-link-icon">📸</div>Follow on Instagram</a>
     </div>
   </div>
   <div class="contact-cta">
     <h3>Start with a free call 👋</h3>
-    <p>Chat on WhatsApp or call directly. We respond within minutes during business hours.</p>
+    <p>Chat on WhatsApp or call directly. Harshad personally responds within minutes during business hours.</p>
     <a href="https://wa.me/918087861953" class="whatsapp-btn">💬 Message on WhatsApp</a>
-    <a href="tel:+918087861953" class="call-btn">📞 Call Us Now</a>
+    <a href="tel:+918087861953" class="call-btn">📞 Call Now — +91 8087861953</a>
   </div>
 </section>
 
 <footer>
-  <img style="height:36px;width:auto;" src="logo.png" alt="Think Visual">
-  <p>© 2026 Think Visual · "See the future" · Nashik, Maharashtra</p>
+  <img style="height:36px;width:auto;" src="logo1.png" alt="Think Visual">
+  <p>© 2026 Think Visual by Harshad Jejurkar · "See the future" · Nashik</p>
+  <p style="font-size:12px;color:#555;">All Rights Reserved</p>
 </footer>
 
+<script async src="//www.instagram.com/embed.js"></script>
 <script>
-const words=['SEO','Web Design','Social Media','Video Editing','Graphic Design','Digital Growth'];
+const words=['SEO','Web Design','Social Media','Video Editing','Graphic Design','AI Marketing'];
 let wi=0,ci=0,deleting=false;
 const el=document.getElementById('typewriter');
 function type(){
@@ -215,6 +245,14 @@ function type(){
   else{setTimeout(type,deleting?60:110);}
 }
 type();
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});
+},{threshold:0.1});
+document.querySelectorAll('.service-card,.step,.stat,.portfolio-item').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(20px)';
+  el.style.transition='opacity 0.5s ease,transform 0.5s ease';
+  observer.observe(el);
+});
 </script>
 </body>
 </html>
