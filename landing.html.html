@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Think Visual | Free Digital Marketing Consultation – Nashik</title>
+<meta name="description" content="Get a FREE Digital Marketing Consultation from Think Visual, Nashik. Expert SEO, Graphic Design, Video Editing & AI Marketing. Limited slots available!">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#080909;
+  --bg2:#0F1010;
+  --bg3:#161818;
+  --accent:#F5A623;
+  --accent2:#FF8C00;
+  --accent-glow:rgba(245,166,35,0.4);
+  --text:#F5F5F5;
+  --muted:#888;
+  --border:rgba(245,166,35,0.15);
+  --font:'Space Grotesk',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font);overflow-x:hidden;min-height:100vh;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px;}
+
+/* ══ GRID BG ══ */
+.grid-bg{
+  position:fixed;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(245,166,35,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(245,166,35,0.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  animation:gridScroll 25s linear infinite;
+  pointer-events:none;
+}
+@keyframes gridScroll{0%{transform:translateY(0)}100%{transform:translateY(60px)}}
+
+/* ══ ORBS ══ */
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;}
+.orb1{width:500px;height:500px;background:rgba(245,166,35,0.07);top:-100px;right:-100px;animation:orbFloat 10s ease-in-out infinite;}
+.orb2{width:300px;height:300px;background:rgba(255,140,0,0.05);bottom:100px;left:-80px;animation:orbFloat 8s ease-in-out infinite reverse;}
+@keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-40px)}}
+
+/* ══ HEADER ══ */
+header{
+  position:relative;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 6%;
+  border-bottom:1px solid var(--border);
+  background:rgba(8,9,9,0.8);
+  backdrop-filter:blur(20px);
+}
+.logo-img{height:56px;width:auto;filter:drop-shadow(0 0 12px rgba(245,166,35,0.4));}
+.header-badge{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(245,166,35,0.1);
+  border:1px solid var(--border);
+  padding:8px 16px;border-radius:30px;
+  font-size:13px;color:var(--accent);font-weight:600;
+}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:blink 1.2s ease-in-out infinite;box-shadow:0 0 8px #22c55e;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ══ HERO ══ */
+.hero{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;
+  align-items:center;padding:80px 6%;
+}
+
+/* Left */
+.hero-left{}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,166,35,0.08);
+  border:1px solid var(--border);
+  padding:7px 18px;border-radius:30px;
+  font-size:12px;color:var(--accent);font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:28px;
+}
+.hero h1{
+  font-size:clamp(36px,5vw,62px);
+  font-weight:800;line-height:1.08;
+  letter-spacing:-2px;margin-bottom:24px;
+}
+.hero h1 .gold{
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
+
+.hero-desc{font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:480px;}
+.hero-desc strong{color:var(--accent);font-weight:700;}
+
+/* Trust row */
+.trust-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px;}
+.trust-pill{
+  display:flex;align-items:center;gap:8px;
+  background:var(--bg3);border:1px solid var(--border);
+  padding:8px 16px;border-radius:30px;
+  font-size:13px;color:var(--text);font-weight:500;
+}
+
+/* Urgency */
+.urgency{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(239,68,68,0.08);
+  border:1px solid rgba(239,68,68,0.2);
+  padding:12px 20px;border-radius:12px;
+  font-size:14px;color:#fca5a5;font-weight:600;
+}
+.urgency-icon{font-size:18px;animation:shake 2s ease-in-out infinite;}
+@keyframes shake{0%,100%{transform:rotate(0)}10%,30%{transform:rotate(-8deg)}20%,40%{transform:rotate(8deg)}50%{transform:rotate(0)}}
+
+/* ══ FORM CARD ══ */
+.form-card{
+  position:relative;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:48px 40px;
+  box-shadow:0 0 60px rgba(245,166,35,0.08);
+  overflow:hidden;
+}
+.form-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent));
+  background-size:200%;
+  animation:shimmer 2s linear infinite;
+}
+.form-glow{
+  position:absolute;top:-80px;right:-80px;
+  width:250px;height:250px;border-radius:50%;
+  background:rgba(245,166,35,0.06);
+  filter:blur(40px);pointer-events:none;
+}
+.form-title{
+  font-size:24px;font-weight:800;margin-bottom:8px;
+  color:var(--text);letter-spacing:-0.5px;
+  position:relative;
+}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:32px;line-height:1.6;position:relative;}
+.form-sub span{color:var(--accent);font-weight:700;}
+
+/* Form fields */
+.field{margin-bottom:20px;position:relative;}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px;letter-spacing:0.3px;}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--bg3);
+  border:1.5px solid rgba(255,255,255,0.06);
+  border-radius:12px;padding:14px 18px;
+  font-family:var(--font);font-size:15px;color:var(--text);
+  outline:none;transition:all .25s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(245,166,35,0.1);
+  background:var(--bg);
+}
+.field input::placeholder,.field textarea::placeholder{color:#444;}
+.field select option{background:var(--bg3);color:var(--text);}
+.field textarea{resize:none;height:90px;}
+
+/* Submit */
+.submit-btn{
+  width:100%;padding:16px 28px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;border:none;border-radius:50px;
+  font-family:var(--font);font-size:16px;font-weight:800;
+  cursor:pointer;transition:all .25s;
+  box-shadow:0 8px 30px rgba(245,166,35,0.4);
+  position:relative;overflow:hidden;
+  letter-spacing:0.3px;margin-top:8px;
+}
+.submit-btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.15),transparent);
+  opacity:0;transition:opacity .2s;
+}
+.submit-btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(245,166,35,0.55);}
+.submit-btn:hover::before{opacity:1;}
+.submit-btn:active{transform:translateY(0);}
+
+.form-note{text-align:center;font-size:12px;color:#444;margin-top:14px;}
+.form-note span{color:var(--accent);}
+
+/* ══ SUCCESS MESSAGE ══ */
+.success-msg{
+  display:none;text-align:center;padding:40px 20px;
+}
+.success-icon{font-size:64px;margin-bottom:20px;display:block;animation:pop 0.5s ease-out;}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
+.success-msg h3{font-size:24px;font-weight:800;color:var(--text);margin-bottom:12px;}
+.success-msg p{font-size:15px;color:var(--muted);line-height:1.7;}
+.whatsapp-alt{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;
+  padding:14px 28px;border-radius:50px;
+  font-weight:700;font-size:15px;text-decoration:none;
+  margin-top:24px;box-shadow:0 6px 20px rgba(37,211,102,0.35);
+  transition:transform .2s;
+}
+.whatsapp-alt:hover{transform:translateY(-2px);}
+
+/* ══ SOCIAL PROOF ══ */
+.proof-section{
+  position:relative;z-index:1;
+  padding:80px 6%;
+  border-top:1px solid var(--border);
+}
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:40px;}
+.proof-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:20px;padding:28px;
+  transition:all .3s;
+}
+.proof-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 30px rgba(245,166,35,0.1);}
+.stars{color:var(--accent);font-size:16px;margin-bottom:14px;letter-spacing:2px;}
+.proof-text{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:18px;font-style:italic;}
+.proof-author{display:flex;align-items:center;gap:12px;}
+.proof-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.proof-name{font-size:14px;font-weight:700;color:var(--text);}
+.proof-role{font-size:12px;color:var(--muted);}
+
+/* ══ SERVICES ROW ══ */
+.services-row{
+  position:relative;z-index:1;
+  padding:70px 6%;
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.services-mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-top:36px;}
+.service-mini-card{
+  background:var(--bg3);border:1px solid var(--border);
+  border-radius:16px;padding:22px 20px;text-align:center;
+  transition:all .3s;cursor:default;
+}
+.service-mini-card:hover{border-color:var(--accent);background:rgba(245,166,35,0.05);box-shadow:0 8px 24px rgba(245,166,35,0.1);}
+.service-mini-icon{font-size:28px;display:block;margin-bottom:10px;}
+.service-mini-card p{font-size:13px;font-weight:600;color:var(--text);}
+
+/* ══ FOOTER ══ */
+footer{
+  position:relative;z-index:1;
+  padding:28px 6%;
+  border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+footer p{font-size:13px;color:#444;}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:13px;color:#444;text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--accent);}
+
+/* ══ SECTION TITLES ══ */
+.sec-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.sec-title{font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:12px;}
+.sec-sub{font-size:15px;color:var(--muted);line-height:1.7;}
+
+/* ══ MOBILE ══ */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:60px 6%;gap:40px;}
+  .hero h1{font-size:clamp(32px,8vw,52px);}
+}
+@media(max-width:600px){
+  .form-card{padding:32px 24px;}
+  footer{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<!-- HEADER -->
+<header>
+  <img class="logo-img" src="logo1.png" alt="Think Visual">
+  <div class="header-badge">
+    <span class="live-dot"></span>
+    Free Consultation Available
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- LEFT -->
+  <div class="hero-left">
+    <div class="hero-tag">✦ Limited Slots Available</div>
+
+    <h1>
+      Grow Your Business<br>with <span class="gold">AI-Powered</span><br>Digital Marketing
+    </h1>
+
+    <p class="hero-desc">
+      Get a <strong>FREE 30-minute consultation</strong> with Harshad Jejurkar — Nashik's leading Digital Marketer, Graphic Designer & AI Marketing Expert with <strong>6+ years of experience.</strong>
+    </p>
+
+    <div class="trust-row">
+      <div class="trust-pill">✅ 20+ Clients Served</div>
+      <div class="trust-pill">⭐ 5 Star Rated</div>
+      <div class="trust-pill">🤖 AI-Powered</div>
+      <div class="trust-pill">⚡ 48h Delivery</div>
+    </div>
+
+    <div class="urgency">
+      <span class="urgency-icon">🔥</span>
+      Only <strong style="color:#fff;margin:0 4px;">3 free slots</strong> remaining this week!
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-card" id="formCard">
+    <div class="form-glow"></div>
+
+    <h2 class="form-title">Book Your FREE Consultation</h2>
+    <p class="form-sub">Fill the form below — Harshad will call you within <span>24 hours!</span></p>
+
+    <form id="leadForm" onsubmit="handleSubmit(event)">
+      <div class="field">
+        <label>Your Full Name *</label>
+        <input type="text" placeholder="e.g. Rahul Sharma" required>
+      </div>
+      <div class="field">
+        <label>WhatsApp Number *</label>
+        <input type="tel" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+      </div>
+      <div class="field">
+        <label>Your Business Type *</label>
+        <select required>
+          <option value="" disabled selected>Select your business</option>
+          <option>Restaurant / Food Business</option>
+          <option>Retail / Shop</option>
+          <option>Real Estate</option>
+          <option>Education / Coaching</option>
+          <option>Healthcare / Clinic</option>
+          <option>Salon / Beauty</option>
+          <option>Startup / New Business</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>What do you need help with?</label>
+        <textarea placeholder="e.g. I need a website and social media management for my restaurant..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        🚀 Get My FREE Consultation →
+      </button>
+
+      <p class="form-note">🔒 100% Free • No spam • <span>Harshad personally calls you</span></p>
+    </form>
+
+    <!-- Success Message -->
+    <div class="success-msg" id="successMsg">
+      <span class="success-icon">🎉</span>
+      <h3>Shukriya! We'll call you soon.</h3>
+      <p>Harshad Jejurkar will personally reach out to you within <strong style="color:var(--accent)">24 hours.</strong><br><br>Ya abhi seedha WhatsApp par message kar sakte ho!</p>
+      <a href="https://wa.me/918087861953" class="whatsapp-alt">
+        💬 Chat on WhatsApp Now
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- SERVICES ROW -->
+<section class="services-row">
+  <div class="sec-tag">✦ Our Services</div>
+  <h2 class="sec-title">Everything Your Brand Needs</h2>
+  <p class="sec-sub">One agency. All solutions. Zero headache.</p>
+  <div class="services-mini">
+    <div class="service-mini-card"><span class="service-mini-icon">🌐</span><p>Website Development</p></div>
+    <div class="service-mini-card"><span class="service-mini-icon">🔍</span><p>SEO & Local SEO</p></div>
+    <div class="service-mini-card"><span class="service-mini-icon">🎨</span><p>Graphic Design</p></div>
+    <div class="service-mini-card"><span class="service-mini-icon">🎬</span><p>Video Editing</p></div>
+    <div class="service-mini-card"><span class="service-mini-icon">📱</span><p>Social Media</p></div>
+    <div class="service-mini-card"><span class="service-mini-icon">🤖</span><p>AI Marketing</p></div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-section">
+  <div class="sec-tag">✦ Client Reviews</div>
+  <h2 class="sec-title">What Our Clients Say</h2>
+  <p class="sec-sub">Real results for real businesses in Nashik.</p>
+
+  <div class="proof-grid">
+    <div class="proof-card">
+      <div class="stars">★★★★★</div>
+      <p class="proof-text">"Think Visual ne hamare restaurant ki Instagram aur website dono banai. Bahut professional kaam kiya aur leads bhi aane lage!"</p>
+      <div class="proof-author">
+        <div class="proof-avatar">🍽️</div>
+        <div><div class="proof-name">Amit Patil</div><div class="proof-role">Restaurant Owner, Nashik</div></div>
+      </div>
+    </div>
+    <div class="proof-card">
+      <div class="stars">★★★★★</div>
+      <p class="proof-text">"Harshad ne hamare brand ka logo aur social media sab design kiya. Quality ekdum premium hai aur price bhi reasonable!"</p>
+      <div class="proof-author">
+        <div class="proof-avatar">💇</div>
+        <div><div class="proof-name">Priya Deshmukh</div><div class="proof-role">Salon Owner, Nashik</div></div>
+      </div>
+    </div>
+    <div class="proof-card">
+      <div class="stars">★★★★★</div>
+      <p class="proof-text">"SEO ke baad hamare clinic ka Google par naam aane laga. Bahut accha kaam hai Think Visual ka. Highly recommended!"</p>
+      <div class="proof-author">
+        <div class="proof-avatar">🏥</div>
+        <div><div class="proof-name">Dr. Suresh Kulkarni</div><div class="proof-role">Clinic, Nashik</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img style="height:44px;width:auto;filter:drop-shadow(0 0 8px rgba(245,166,35,0.3));" src="logo1.png" alt="Think Visual">
+  <p>© 2026 Think Visual · Harshad Jejurkar · Nashik, Maharashtra</p>
+  <div class="footer-links">
+    <a href="tel:+918087861953">📞 8087861953</a>
+    <a href="https://wa.me/918087861953">💬 WhatsApp</a>
+    <a href="mailto:Harshadjejurkar91@gmail.com">📧 Email</a>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  const form=document.getElementById('leadForm');
+  const success=document.getElementById('successMsg');
+  form.style.display='none';
+  success.style.display='block';
+
+  // Get form data
+  const inputs=form.querySelectorAll('input,select,textarea');
+  const name=inputs[0].value;
+  const phone=inputs[1].value;
+  const business=inputs[2].value;
+  const message=inputs[3].value;
+
+  // WhatsApp auto message
+  const msg=`Hello Harshad! 👋%0A%0AMera naam *${name}* hai.%0APhone: *${phone}*%0ABusiness: *${business}*%0A%0AMessage: ${message}%0A%0AThink Visual landing page se contact kar raha hoon.`;
+  setTimeout(()=>{
+    window.open(`https://wa.me/918087861953?text=${msg}`,'_blank');
+  },1500);
+}
+
+// Animate dots
+const canvas=document.createElement('canvas');
+// Floating particles
+function createParticle(){
+  const p=document.createElement('div');
+  p.style.cssText=`position:fixed;width:3px;height:3px;border-radius:50%;background:rgba(245,166,35,0.4);pointer-events:none;z-index:0;left:${Math.random()*100}vw;top:${Math.random()*100}vh;animation:fadeFloat ${4+Math.random()*4}s ease-in-out infinite ${Math.random()*4}s;`;
+  document.body.appendChild(p);
+}
+const style=document.createElement('style');
+style.textContent='@keyframes fadeFloat{0%,100%{opacity:0;transform:translateY(0)}50%{opacity:0.5;transform:translateY(-20px)}}';
+document.head.appendChild(style);
+for(let i=0;i<25;i++)createParticle();
+
+// Countdown timer (urgency)
+let slots=3;
+</script>
+</body>
+</html>
